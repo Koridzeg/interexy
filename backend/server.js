@@ -4,15 +4,25 @@ const app = express();
 
 const connectDb = require("./db/connect");
 
+//routers
+const authRouter = require("./routes/auth");
+const userRouter = require('./routes/user-info')
+//error handling
+
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
 app.use(express.json());
 
+const port = process.env.PORT || 3000;
+
+//routes
+
+app.use("/auth", authRouter);
+app.use("/user", userRouter)
+
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
-
-const port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
