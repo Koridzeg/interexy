@@ -4,6 +4,14 @@ const app = express();
 
 const connectDb = require("./db/connect");
 
+const notFoundMiddleware = require("./middleware/not-found");
+const errorHandlerMiddleware = require("./middleware/error-handler");
+
+app.use(express.json());
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
+
 const port = process.env.PORT || 3000;
 
 const start = async () => {
