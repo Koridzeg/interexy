@@ -1,30 +1,45 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from "@mui/material"
+import Card from '../../components/Card'
 
 
-interface ApiInfo {
-  count: number,
-  next: string,
-  pages: number,
-}
-
-interface CharacterName {
+interface Character {
+  created: string,
+  episode: string[],
+  gender: string,
+  id: number,
+  image: string,
+  location: {
+    name: string,
+    url: string,
+  },
   name: string,
+  origin: {
+    name: string,
+    url: string,
+  },
   status: string,
   species: string,
   type: string,
+  url: string,
 }
 
-interface CharacterInfo {
-  id: number,
-  name: CharacterName,
-
+interface Info {
+  count: number,
+  next: string,
+  pages: number,
+  prev?: string,
 }
+
+export interface FetchResult {
+  info: Info,
+  results: Character[]
+}
+
 
 const Home = () => {
-  const [pageNumber, setPageNumber] = useState(1)
-  const [fetchedData, setFetchedData] = useState<any>([])
-  const { info, results } = fetchedData;
+  const [pageNumber, _] = useState(1)
+  const [fetchedData, setFetchedData] = useState<FetchResult>()
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
   console.log(fetchedData)
@@ -51,7 +66,7 @@ const Home = () => {
           alignItems="center"
           flex-wrap="wrap"
           max-width="1920px">
-
+          <Card page="/" results={fetchedData} />
         </Box>
       </Box>
     </div>
