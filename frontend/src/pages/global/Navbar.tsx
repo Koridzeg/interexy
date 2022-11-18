@@ -34,7 +34,7 @@ const Navbar = () => {
                         sx={{ "&:hover": { cursor: "pointer" } }}>
                         Register
                     </Box>
-                    <Box onClick={() => navigate('/register')}
+                    <Box onClick={() => navigate('/login')}
                         sx={{ "&:hover": { cursor: "pointer" } }}>
                         Login
                     </Box>

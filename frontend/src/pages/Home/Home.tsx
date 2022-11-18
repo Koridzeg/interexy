@@ -43,7 +43,6 @@ const Home = () => {
   const [fetchedData, setFetchedData] = useState<FetchResult>()
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
-  console.log(fetchedData)
 
   useEffect(() => {
     (async function () {

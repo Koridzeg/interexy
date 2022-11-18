@@ -27,6 +27,7 @@ const Card = (props: CardProps) => {
                     margin="0.75rem"
                     boxShadow="rgb(0 0 0 / 10%) 0px 4px 6px -1px,rgb(0 0 0 / 6%) 0px 2px 4px -1px"
                     sx={{ background: 'rgb(60, 62, 68)' }}
+                    key={id}
                 >
                     <Box
                         flex="2 1 0%"
