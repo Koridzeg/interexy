@@ -37,8 +37,22 @@ const Home = () => {
   }, [api])
   return (
     <div className='home'>
-      <Box width="80x" margin="80px auto">
-        
+      <Box
+        display="flex"
+        justifyContent="flex"
+        alignItems="center"
+        padding="4.5rem 0px"
+        bgcolor="rgb(32,35,41)"
+        min-height="calc(50vh - 60px)"
+
+      >
+        <Box display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flex-wrap="wrap"
+          max-width="1920px">
+
+        </Box>
       </Box>
     </div>
   )
