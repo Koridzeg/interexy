@@ -38,6 +38,7 @@ export interface FetchResult {
 
 
 const Home = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pageNumber, _] = useState(1)
   const [fetchedData, setFetchedData] = useState<FetchResult>()
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
@@ -58,15 +59,15 @@ const Home = () => {
         alignItems="center"
         padding="4.5rem 0px"
         bgcolor="rgb(32,35,41)"
-        min-height="calc(50vh - 60px)"
+        minHeight="calc(50vh - 60px)"
 
       >
         <Box display="flex"
           justifyContent="center"
           alignItems="center"
-          flex-wrap="wrap"
-          max-width="1920px">
-          <Card page="/" results={fetchedData} />
+          flexWrap="wrap"
+          maxWidth="1920px">
+          {fetchedData && <Card page="/" fetchResults={fetchedData} />}
         </Box>
       </Box>
     </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Box } from "@mui/material"
 import { useNavigate } from 'react-router'
-import { IconButton } from '@mui/material';
-import LoginIcon from '@mui/icons-material/Login';
+
 const Navbar = () => {
     const navigate = useNavigate()
 
@@ -29,6 +28,16 @@ const Navbar = () => {
                     sx={{ "&:hover": { cursor: "pointer" } }}
                 >
                     Home
+                </Box>
+                <Box display="flex" justifyContent="center" alignItems="center" gap="1rem">
+                    <Box onClick={() => navigate('/register')}
+                        sx={{ "&:hover": { cursor: "pointer" } }}>
+                        Register
+                    </Box>
+                    <Box onClick={() => navigate('/register')}
+                        sx={{ "&:hover": { cursor: "pointer" } }}>
+                        Login
+                    </Box>
                 </Box>
             </Box>
         </Box>
