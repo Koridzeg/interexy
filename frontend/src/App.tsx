@@ -8,9 +8,10 @@ const Register = lazy(() => import('./pages/Register/Register'))
 
 function App() {
   return (
+    <div className='app'>
     <Suspense fallback={<div>...loading</div>}>
       <Router>
-        <Navbar />
+      <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/register' element={<Register />} />
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </Router>
     </Suspense>
+    </div>
   );
 }
 

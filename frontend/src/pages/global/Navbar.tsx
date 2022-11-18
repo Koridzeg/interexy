@@ -9,6 +9,7 @@ const Navbar = () => {
     return (
         <Box
             bgcolor="rgba(255,255,255,0.95)"
+            alignItems="center"
             display="flex"
             width="100%"
             height="60px"
@@ -18,7 +19,7 @@ const Navbar = () => {
             left="0"
         >
             <Box
-                width="70%"
+                width="80%"
                 margin="auto"
                 display="flex"
                 justifyContent="space-between"
