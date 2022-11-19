@@ -5,6 +5,7 @@ import Navbar from './pages/global/Navbar';
 const Home = lazy(() => import('./pages/Home/Home'))
 const Login = lazy(() => import('./pages/Login/Login'))
 const Register = lazy(() => import('./pages/Register/Register'))
+const CardDetails = lazy(() => import('./pages/CharacterDetails/CharacterDetails'))
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/:id' element={<CardDetails />}/>
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
           </Routes>

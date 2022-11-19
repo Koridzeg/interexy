@@ -54,7 +54,7 @@ const Home = () => {
     <div className='home'>
       <Box
         display="flex"
-        justifyContent="flex"
+        justifyContent="center"
         alignItems="center"
         padding="4.5rem 0px"
         bgcolor="rgb(32,35,41)"
