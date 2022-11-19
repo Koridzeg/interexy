@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box } from "@mui/material"
+import { Box, Button } from "@mui/material"
 import Card from '../../components/Card'
 
 
@@ -39,7 +39,7 @@ export interface FetchResult {
 
 const Home = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [pageNumber, _] = useState(1)
+  const [pageNumber, setPageNumber] = useState(1)
   const [fetchedData, setFetchedData] = useState<FetchResult>()
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
@@ -61,13 +61,24 @@ const Home = () => {
         minHeight="calc(50vh - 60px)"
 
       >
+
         <Box display="flex"
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
           maxWidth="1920px">
           {fetchedData && <Card page="/" fetchResults={fetchedData} />}
+
         </Box>
+
+      </Box>
+      <Box display="flex" justifyContent="center" bgcolor="rgb(32,35,41)">
+        <Button onClick={() => {
+          setPageNumber(prevValue => prevValue - 1)
+        }} variant="contained">Prev</Button>
+        <Button onClick={() => {
+          setPageNumber(prevValue => prevValue + 1)
+        }} variant="contained">Next</Button>
       </Box>
     </div>
   )
