@@ -11,18 +11,27 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    const res = await axios.post("http://localhost:8000/auth/login", {
       email: data.get('email'),
-      password: data.get('password'),
-    });
+      password: data.get('password')
+    })
+
+    if (res.data) {
+      localStorage.setItem('user', JSON.stringify(res.data))
+    }
+    return res.data;
+
   };
 
   return (

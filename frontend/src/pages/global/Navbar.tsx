@@ -3,9 +3,15 @@ import { Box } from "@mui/material"
 import { useNavigate } from 'react-router'
 
 const Navbar = () => {
+
+
+    const user = JSON.parse(localStorage.getItem('user') || "")
+    console.log(user)
+
     const navigate = useNavigate()
 
     return (
+
         <Box
             bgcolor="rgba(255,255,255,0.95)"
             alignItems="center"
@@ -17,6 +23,7 @@ const Navbar = () => {
             top="0"
             left="0"
         >
+
             <Box
                 width="80%"
                 margin="auto"
@@ -29,6 +36,7 @@ const Navbar = () => {
                 >
                     Home
                 </Box>
+                :
                 <Box display="flex" justifyContent="center" alignItems="center" gap="1rem">
                     <Box onClick={() => navigate('/register')}
                         sx={{ "&:hover": { cursor: "pointer" } }}>
@@ -39,6 +47,7 @@ const Navbar = () => {
                         Login
                     </Box>
                 </Box>
+
             </Box>
         </Box>
     )
