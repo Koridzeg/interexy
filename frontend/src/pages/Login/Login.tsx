@@ -29,6 +29,7 @@ export default function SignIn() {
 
     if (res.data) {
       localStorage.setItem('user', JSON.stringify(res.data))
+      navigate('/')
     }
     return res.data;
 

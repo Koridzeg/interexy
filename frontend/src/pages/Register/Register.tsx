@@ -23,7 +23,8 @@ export default function SignUp() {
     const data = new FormData(event.currentTarget);
     await axios.post("http://localhost:8000/auth/register", {
       email: data.get('email'),
-      password: data.get('password')
+      password: data.get('password'),
+      bio: data.get('bio')
     }).then(() => navigate('/login')).catch((err) => console.log(err));
 
   };
@@ -71,6 +72,15 @@ export default function SignUp() {
                   id="password"
                   autoComplete="new-password"
                 />
+              </Grid>
+              <Grid item xs={12}>
+            <TextField
+              fullWidth
+              name="bio"
+              type="bio"
+              id="bio"
+              placeholder='Enter your bio'
+              />
               </Grid>
             </Grid>
             <Button
