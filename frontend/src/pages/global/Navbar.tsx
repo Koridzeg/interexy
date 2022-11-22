@@ -33,7 +33,7 @@ const Navbar = () => {
                 >
                     Home
                 </Box>
-                {sessionStorage.getItem("user") === null ? (
+                {(sessionStorage.getItem("user") || localStorage.getItem("user")) === null ? (
                     <Box display="flex" justifyContent="center" alignItems="center" gap="1rem">
                         <Box onClick={() => navigate('/register')}
                             sx={{ "&:hover": { cursor: "pointer" } }}>
@@ -48,6 +48,7 @@ const Navbar = () => {
                     <Box display="flex" justifyContent="center" alignItems="center" gap="1rem">
                         <Box onClick={() => {
                             sessionStorage?.removeItem('user')
+                            localStorage?.removeItem('user')
                             navigate('/login')
                         }
                         }

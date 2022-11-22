@@ -22,6 +22,7 @@ const theme = createTheme();
 export default function SignIn() {
   const navigate = useNavigate();
 
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -33,7 +34,9 @@ export default function SignIn() {
     if (res.data) {
       sessionStorage.setItem('user', JSON.stringify(res.data))
       navigate('/')
-
+      if (data.get('rememberme') === 'remember') {
+        localStorage.setItem('user', JSON.stringify(res.data))
+      }
 
     }
     return res.data;
@@ -82,6 +85,8 @@ export default function SignIn() {
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
+              name="rememberme"
+              id="rememberme"
             />
             <Button
               type="submit"
