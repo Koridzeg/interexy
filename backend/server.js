@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors')
 const connectDb = require("./db/connect");
-
+const authenticateUser = require('./middleware/authentication');
 //routers
 const authRouter = require("./routes/auth");
 const userRouter = require('./routes/user-info')
@@ -20,7 +20,7 @@ const port = process.env.PORT || 3000;
 //routes
 
 app.use("/auth", authRouter);
-app.use("/user", userRouter)
+app.use("/user",authenticateUser, userRouter)
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
