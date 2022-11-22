@@ -30,7 +30,7 @@ export default function SignUp() {
   };
 
 
-
+// TODO - VALIDATIONS ON FORM 
 
   return (
     <ThemeProvider theme={theme}>

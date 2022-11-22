@@ -16,6 +16,9 @@ import axios from "axios"
 
 const theme = createTheme();
 
+
+// TODO - VALIDATIONS ON FORM 
+
 export default function SignIn() {
   const navigate = useNavigate();
 
@@ -28,8 +31,10 @@ export default function SignIn() {
     })
 
     if (res.data) {
-      localStorage.setItem('user', JSON.stringify(res.data))
+      sessionStorage.setItem('user', JSON.stringify(res.data))
       navigate('/')
+
+
     }
     return res.data;
 

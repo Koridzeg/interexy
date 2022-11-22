@@ -7,7 +7,7 @@ const UserInfo = () => {
 
     const [userData, setuserData] = useState<AxiosResponse | null>(null)
 
-    const data = JSON.parse(localStorage.getItem("user") || "{}")
+    const data = JSON.parse(sessionStorage.getItem("user") || "{}")
 
     const parseJwt = (token: any) => {
         try {
@@ -30,9 +30,6 @@ const UserInfo = () => {
         })()
 
     }, [api])
-
-    console.log(userData)
-
 
 
     return (

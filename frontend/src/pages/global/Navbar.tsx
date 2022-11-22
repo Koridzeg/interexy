@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router'
 const Navbar = () => {
 
 
-    const user = JSON.parse(localStorage?.getItem('user') || "{}")
 
     const navigate = useNavigate()
 
@@ -34,7 +33,7 @@ const Navbar = () => {
                 >
                     Home
                 </Box>
-                {localStorage.getItem("user") === null ? (
+                {sessionStorage.getItem("user") === null ? (
                     <Box display="flex" justifyContent="center" alignItems="center" gap="1rem">
                         <Box onClick={() => navigate('/register')}
                             sx={{ "&:hover": { cursor: "pointer" } }}>
@@ -48,7 +47,7 @@ const Navbar = () => {
                 ) : (<>
                     <Box display="flex" justifyContent="center" alignItems="center" gap="1rem">
                         <Box onClick={() => {
-                            localStorage?.removeItem('user')
+                            sessionStorage?.removeItem('user')
                             navigate('/login')
                         }
                         }
