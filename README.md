@@ -1,5 +1,5 @@
 # Interexy
-
+[`Interexy`](https://koridzeg.github.io/interexy/)
 ## Usage
 
 Create .env in backend and add your MONGO_URI,PORT,JWT_LIFETIME and JWT_SECRET.
@@ -33,3 +33,17 @@ npm install
   - **/routes/** - call&user routes.
   - **/routes/** - error handling
   
+  ## Tools used during development
+  
+  [`axios`](https://github.com/axios/axios)
+  [`MUI`](https://github.com/mui/material-ui)
+  [`formik`](https://github.com/jaredpalmer/formik)
+  [`react-router`](https://github.com/remix-run/react-router)
+  
+  [`bcryptjs`](https://github.com/kelektiv/node.bcrypt.js/)
+  [`cors`](https://github.com/expressjs/cors)
+  [`dotenv`](https://github.com/motdotla/dotenv)
+  [`express`](https://github.com/expressjs/express)
+  [`mongoose`](https://github.com/Automattic/mongoose)
+  [`jsonwebtoken`](https://github.com/auth0/node-jsonwebtoken) 
+  [`http-status-codes`](https://github.com/prettymuchbryce/http-status-codes)
